@@ -2,6 +2,7 @@ import React from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import Typography from "@material-ui/core/Typography";
+import useTodoState from "./useTodoState";
 
 class Todo extends React.Component {
   state = {
@@ -22,6 +23,9 @@ class Todo extends React.Component {
   };
 
   render() {
+    // TASK: change this class to use this hook instead
+    // const { todos, addTodo, deleteTodo } = useTodoState([]);
+
     return (
       <div>
         <Typography component="h1" variant="h2">

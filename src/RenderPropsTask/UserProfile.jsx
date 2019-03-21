@@ -1,6 +1,7 @@
 import React from "react";
-import ThemeContext from "../ThemeProvider";
+import ThemeContext from "./ThemeProvider";
 import UserProfileProvider from "./UserProfileProvider";
+// import useUserProfileState from "./useUserProfileState";
 
 const styles = {
   dark: {
@@ -14,6 +15,11 @@ const styles = {
 };
 
 const UserProfile = props => {
+  // Make use of 'user
+  // Use the following hooks instead of the render props below
+  // const { user, isLoading, fetchUser } = useUserProfileState();
+  // const val = useContext(ThemeContext);
+
   return (
     <UserProfileProvider id={props.id}>
       {(userProfile, isLoading) =>
@@ -23,8 +29,11 @@ const UserProfile = props => {
           <ThemeContext.Consumer>
             {val => (
               <div style={styles[val]}>
-                {`Brukernavn: ${userProfile ? userProfile.name : ""}`}
-                {val}
+                {`Brukernavn: ${
+                  userProfile
+                    ? userProfile.name
+                    : "Spiller finnes ikke, eller er for dårlig til å være med."
+                }`}
               </div>
             )}
           </ThemeContext.Consumer>

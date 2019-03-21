@@ -7,6 +7,10 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
 import React from "react";
 
+/**
+ * No changes needs to be made in this component
+ */
+
 const TodoList = ({ todos, deleteTodo }) => {
   return (
     <List>

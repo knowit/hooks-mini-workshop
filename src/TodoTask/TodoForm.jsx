@@ -1,5 +1,6 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
+import useInputState from "./useInputState";
 
 class TodoForm extends React.Component {
   state = {
@@ -16,6 +17,9 @@ class TodoForm extends React.Component {
 
   render() {
     const { addTodo } = this.props;
+
+    // TASK: change this class to use this hook instead
+    // const { value, onChange, reset } = useInputState("");
     return (
       <form
         onSubmit={e => {

@@ -1,6 +1,8 @@
 import React from "react";
 
+// 1. Hooks cannot be used in classes. Convert to component
 class OneTimeButton extends React.Component {
+  // 2. Remove old state handling, and use 'useState' instead
   state = {
     clicked: false
   };
