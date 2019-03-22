@@ -19,14 +19,14 @@ const userProfiles = [
 
 // Return 2-4 seconds delay
 const getDelay = () => {
-  return 2000 + 2000 * Math.random();
+  return 1000 + 1000 * Math.random();
 };
 
 export const fetchUserFromApi = id => {
   return new Promise(resolve => {
     setTimeout(() => {
       const userProfile = userProfiles.find(
-        userProfile => userProfile.id === id
+        userProfile => userProfile.id == id
       );
 
       resolve(userProfile);
