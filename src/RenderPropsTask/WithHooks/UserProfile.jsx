@@ -21,7 +21,11 @@ const UserProfile = props => {
   useEffect(() => fetchUser(props.id), [props.id]);
   return (
     <div style={styles[val]}>
-      {isLoading ? "Laster..." : `Brukernavn: ${user ? user.name : ""}`}
+      {isLoading
+        ? "Laster..."
+        : user
+        ? user.name
+        : "Spiller finnes ikke, eller er for dårlig til å være med."}
     </div>
   );
 };

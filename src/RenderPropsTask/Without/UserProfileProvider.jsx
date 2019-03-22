@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { fetchUser } from "../../server/mockApi";
+import { fetchUserFromApi } from "../server/mockApi";
 
 export default class UserProfileProvider extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class UserProfileProvider extends Component {
   }
 
   componentDidMount() {
-    fetchUser(this.props.id).then(user =>
+    fetchUserFromApi(this.props.id).then(user =>
       this.setState({ user, isLoading: false })
     );
   }
@@ -20,7 +20,7 @@ export default class UserProfileProvider extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.id !== prevProps.id) {
       this.setState({ isLoading: true });
-      fetchUser(this.props.id).then(user =>
+      fetchUserFromApi(this.props.id).then(user =>
         this.setState({ user, isLoading: false })
       );
     }

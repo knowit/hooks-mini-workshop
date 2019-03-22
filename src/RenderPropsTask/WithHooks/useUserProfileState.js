@@ -1,4 +1,4 @@
-import { fetchUser } from "../../server/mockApi";
+import { fetchUserFromApi } from "../server/mockApi";
 import { useState } from "react";
 
 export default () => {
@@ -11,7 +11,7 @@ export default () => {
     isLoading,
     fetchUser: id => {
       setData({ ...data, isLoading: true });
-      fetchUser(id).then(user => {
+      fetchUserFromApi(id).then(user => {
         setData({ isLoading: false, user });
       });
     }
