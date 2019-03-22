@@ -37,7 +37,19 @@ The existing code uses render props to do two things:
 2. `ThemeProvider` that can be consumed to provide the current theme as a render prop
    As can be seen in `UserProfile.jsx` this causes a couple of levels of nesting.
 
-_Task:_ Follow the comments in the code to rewrite this render prop functionality as hooks.
+_Task 1:_ Follow the comments in the code to rewrite this render prop functionality as hooks.
+
+If you have managed the tasks above it seems to work all right. However there is on scenario that will cause an error
+
+- Begin to type in search field, so that it currently loading.
+- Then, before it finishes loading, delete the input value.
+- When there is no input value `UserProfile` unmounts.
+
+That causes the following error:
+
+> Can't perform a React state update on an unmounted component.
+
+_Task 2_: Solve the problem!
 
 ## Exercise 4
 
